@@ -3,10 +3,4 @@ export interface Account {
 	emails: string[]
 	name: string
  }
-
-export interface MergedAccount {
-applications: number[]
-emails: string[]
-name: string
-}
-
+ 
