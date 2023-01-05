@@ -1,6 +1,6 @@
 import accountData from './data/accounts.json'
 import { MergedAccount, Account } from './types'
-import { emailsMatch, findExistingAccountIndexes } from './tools'
+import { emailsMatch, findExistingAccountIndices } from './tools'
 
  const mergeAccounts = (accounts: Account[]): MergedAccount[] => {
 	let mergedAccounts = [] as MergedAccount[]
@@ -19,7 +19,7 @@ import { emailsMatch, findExistingAccountIndexes } from './tools'
 			})
 
 			if (existingAccounts.length > 0) {
-				const indexesToErase = findExistingAccountIndexes(existingAccounts, mergedAccounts)
+				const indexesToErase = findExistingAccountIndices(existingAccounts, mergedAccounts)
 				existingAccounts.map(({ applications, emails }) => {
 					applications.forEach((app: number) => mergedAccount.applications.push(app))
 					emails.forEach((email: string) => mergedAccount.emails.push(email))
